@@ -4,11 +4,13 @@
 
 type Query {
   sayHello: String!
+  getDownloadUrl(file: String!): String!
 }
 
 type Mutation {
-  singleUpload(file: Upload!): Boolean!
+  singleUpload(file: Upload!): String!
   uploadFile(file: [Upload!]!): Boolean!
+  getSignedUrl(file: Upload!): String!
 }
 
 """The `Upload` scalar type represents a file upload."""
